@@ -4,7 +4,8 @@ MAINTAINER Thomas Cassaert "tcassaert@inuits.eu"
 
 RUN yum update -y \
   && yum -y install ruby-devel rubygems gcc make rpmdevtools \
-  && yum clean all
+  && yum clean all \
+  && rm -rf /var/cache/yum
 
 RUN gem install --no-ri --no-rdoc fpm
 
